@@ -37,12 +37,17 @@ var questions = [
         choices: ["Hypertext Markup Language","HPml","sj","s"],
         answer:1
     },
-]
+];
+
 var currentQ = 0;
 var score = 0;
+var initials = document.getElementById("initials");
+var results = document.getElementById("userInput");
+var buttons = document.getElementById("btn btn-secondary");
 
 //Hide Display
 questionContainer.style.display = "none";
+results.style.display = "none";
 
 startBtn.addEventListener("click", function() {
     startBtn.style.display = "none";
@@ -72,8 +77,12 @@ function displayAnswer() {
     if (currentQ < questions.length - 1) {
         currentQ++;
         displayQuestion();
+    } else {
+        questionContainer.style.display = "none";
+        results.style.display = "block";
     }
 };
+
 
 
 // // variable to keep track of score
