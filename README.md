@@ -7,9 +7,7 @@ Grading Requirements
 This challenge is graded based on the following criteria:
 
 Technical Acceptance Criteria: 40%
-Satisfies all of the above acceptance criteria plus the following:
-
-The Challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
+Satisfies all of the above acceptance criteria.
 Deployment: 32%
 Application deployed at live URL.
 
@@ -31,22 +29,20 @@ Repository has a unique name.
 
 Repository follows best practices for file structure and naming conventions.
 
-Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+Repository follows best practices for class/id naming conventions, indentation, high-quality comments, etc.
 
 Repository contains multiple descriptive commit messages.
 
-Repository contains quality README file with description, screenshot, and link to deployed application.
+Repository contains a high-quality README file with description, screenshot, and link to deployed application.
 
 ### Author:
 Eugene Lee
 
 #### Languanges:
-HTML, Javascript, CSS
+HTML, Javascript, Bootstrap
 
 ## Description:
-This challenge requires the creation of an application that an employee can use to generate a random password based on the criteria they've selected. This app will run in the browser, and will feature a dynamically updated HTML and CSS powered by JavaScript code that's written. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple scree sizes. 
-
-The password can include special characters. 
+This challenge invites us to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that we write. 
 
 #### References:
 [Markdown Guide](https://guides.github.com/features/mastering-markdown/)

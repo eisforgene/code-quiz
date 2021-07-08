@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Code Quiz</title>
 </head>
 <body>
-    
+    <header class="bg-warning text-center">
+        <h1>Code Quiz</h1>
+    </header>
+    <section class="container">
+        <h4>Introduction about Code Quiz</h4>
+        <ul>
+            <li>Timer</li>
+        </ul>
+        <aside>
+            <h3 id="timer"></h3>
+            <button id="start-btn" class="btn btn-primary btn-lg">Start</button>
+        </aside>
+    </section>
+    <main id="question-container">
+        <h4 id="question">Questions display</h4>
+        <button class="btn btn-secondary userInput" id="option1" data-value="1"></button>
+        <button class="btn btn-secondary userInput" id="option2" data-value="2"></button>
+        <button class="btn btn-secondary userInput" id="option3" data-value="3"></button>
+        <button class="btn btn-secondary userInput" id="option4" data-value="4"></button>
+    </main>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="assets/js/script.js"></script>
