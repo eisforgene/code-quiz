@@ -1,3 +1,21 @@
+var startBtn = document.getElementById("start-btn");
+var questionContainer = document.getElementById("question-container");
+var question = document.getElementById("question");
+var button = document.getElementById("option1");
+var button = document.getElementById("option2");
+var button = document.getElementById("option3");
+var button = document.getElementById("option4");
+
+
+//Hide Display
+questionContainer.style.display = "none";
+
+startBtn.addEventListener("click", function() {
+    startBtn.style.display = "none";
+    questionContainer.style.display = "block";
+
+}
+);
 // var questions = [
 //     {
 //         q: 'Is the sky blue?',
