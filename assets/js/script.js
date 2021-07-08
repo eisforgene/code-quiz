@@ -1,11 +1,44 @@
 var startBtn = document.getElementById("start-btn");
 var questionContainer = document.getElementById("question-container");
 var question = document.getElementById("question");
-var button = document.getElementById("option1");
-var button = document.getElementById("option2");
-var button = document.getElementById("option3");
-var button = document.getElementById("option4");
+var button1 = document.getElementById("option1");
+var button2 = document.getElementById("option2");
+var button3 = document.getElementById("option3");
+var button4 = document.getElementById("option4");
 
+var questions = [
+    {
+        q: 'What is HTML?',
+        choices: ["Hypertext Markup Language","HPml","sj","s"],
+        answer:1
+    },
+    {
+        q: 'What is HTML?',
+        choices: ["Hypertext Markup Language","HPml","sj","s"],
+        answer:1
+    },
+    {
+        q: 'What is HTML?',
+        choices: ["Hypertext Markup Language","HPml","sj","s"],
+        answer:1
+    },
+    {
+        q: 'What is HTML?',
+        choices: ["Hypertext Markup Language","HPml","sj","s"],
+        answer:1
+    },
+    {
+        q: 'What is HTML?',
+        choices: ["Hypertext Markup Language","HPml","sj","s"],
+        answer:1
+    },
+    {
+        q: 'What is HTML?',
+        choices: ["Hypertext Markup Language","HPml","sj","s"],
+        answer:1
+    },
+]
+var currentQ = 0;
 
 //Hide Display
 questionContainer.style.display = "none";
@@ -13,35 +46,17 @@ questionContainer.style.display = "none";
 startBtn.addEventListener("click", function() {
     startBtn.style.display = "none";
     questionContainer.style.display = "block";
+    displayQuestion();
+});
 
+function displayQuestion(){
+   question.innerText = questions[currentQ].q;
+   button1.innerText = questions[currentQ].choices[0]
+   button2.innerText = questions[currentQ].choices[1]
+   button3.innerText = questions[currentQ].choices[2]
+   button4.innerText = questions[currentQ].choices[3]
 }
-);
-// var questions = [
-//     {
-//         q: 'Is the sky blue?',
-//         a: true
-//     },
-//     {
-//         q: 'Is the sky blue?',
-//         a: true
-//     },
-//     {
-//         q: 'Is the sky blue?',
-//         a: true
-//     },
-//     {
-//         q: 'Is the sky blue?',
-//         a: true
-//     },
-//     {
-//         q: 'Is the sky blue?',
-//         a: true
-//     },
-//     {
-//         q: 'Is the sky blue?',
-//         a: true
-//     },
-// ]
+
 
 // // variable to keep track of score
 // var score = 0;
