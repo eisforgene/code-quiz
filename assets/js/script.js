@@ -13,7 +13,7 @@ var questions = [
         answer:1
     },
     {
-        q: 'What is HTML?',
+        q: 'What is cssL?',
         choices: ["Hypertext Markup Language","HPml","sj","s"],
         answer:1
     },
@@ -33,12 +33,13 @@ var questions = [
         answer:1
     },
     {
-        q: 'What is HTML?',
+        q: 'What is jsL?',
         choices: ["Hypertext Markup Language","HPml","sj","s"],
         answer:1
     },
 ]
 var currentQ = 0;
+var score = 0;
 
 //Hide Display
 questionContainer.style.display = "none";
@@ -63,7 +64,16 @@ function displayQuestion(){
 
 function displayAnswer() {
     console.log(this.getAttribute("data-value"))
-}
+    if (this.getAttribute("data-value") === questions[currentQ].answer) {
+        score++;
+    } else {
+
+    }
+    if (currentQ < questions.length - 1) {
+        currentQ++;
+        displayQuestion();
+    }
+};
 
 
 // // variable to keep track of score
