@@ -48,6 +48,10 @@ startBtn.addEventListener("click", function() {
     questionContainer.style.display = "block";
     displayQuestion();
 });
+button1.addEventListener("click",displayAnswer);
+button2.addEventListener("click",displayAnswer);
+button3.addEventListener("click",displayAnswer);
+button4.addEventListener("click",displayAnswer);
 
 function displayQuestion(){
    question.innerText = questions[currentQ].q;
@@ -55,6 +59,10 @@ function displayQuestion(){
    button2.innerText = questions[currentQ].choices[1]
    button3.innerText = questions[currentQ].choices[2]
    button4.innerText = questions[currentQ].choices[3]
+}
+
+function displayAnswer() {
+    console.log(this.getAttribute("data-value"))
 }
 
 
