@@ -1,6 +1,6 @@
 # Code Quiz 
 Check website here:
-[GitHub](https://eisforgene.github.io/friendly-parakeet/)
+[GitHub]
 
 ## JavaSCript Challenge: Password Generator
 Grading Requirements
