@@ -6,19 +6,19 @@ var button2 = document.getElementById("option2");
 var button3 = document.getElementById("option3");
 var button4 = document.getElementById("option4");
 var saveButton = document.getElementById("initialsSave");
-var startingMinutes = 5;
-let time = startingMinutes * 60;
-
+var quizTimer = 100
 var countdownEl = document.getElementById('countdown');
-
-setInterval(updateCountdown, 500);
+var timerObj;
+var rightWrong = document.getElementById("rightWrong");
 
 function updateCountdown() {
-    var minutes = Math.floor(time / 60);
-    var seconds = time % 60;
-
-    countdownEl.innerHTML = `${minutes}: ${seconds}`;
-    time--; 
+    if (quizTimer > 1){
+        quizTimer--
+    }
+    else{
+        clearInterval(timerObj)
+    }
+    countdownEl.innerHTML = quizTimer;
 }
 
 var questions = [
@@ -68,6 +68,7 @@ startBtn.addEventListener("click", function() {
     startBtn.style.display = "none";
     questionContainer.style.display = "block";
     displayQuestion();
+    timerObj = setInterval(updateCountdown, 500);
 });
 
 button1.addEventListener("click", displayAnswer);
@@ -85,15 +86,21 @@ function displayQuestion(){
 
 function displayAnswer() {
     // console.log(this.getAttribute("data-value"))
-    if (this.getAttribute("data-value") === questions[currentQ].answer) {
+    if (this.getAttribute("data-value") == questions[currentQ].answer) {
         score++;
+        rightWrong.innerText = "Correct";
     } else {
-    } if (currentQ < questions.length - 1) {
+       quizTimer = quizTimer-5
+       rightWrong.innerText = "Wrong";
+    }
+     if (currentQ < questions.length - 1) {
         currentQ++;
         displayQuestion();
     } else {
         questionContainer.style.display = "none";
         results.style.display = "block";
+        clearInterval(timerObj);
+        displayScore()
     }
 };
 
@@ -104,9 +111,21 @@ document.querySelector('#initialsSave').addEventListener('click', function(e) {
 
     var userInput = document.querySelector('#name').value
     // console.log(userInput);
-
-    localStorage.setItem('name', userInput);
+    var userScore = JSON.parse(localStorage.getItem("codeQuiz"))||[]
+    userScore.push({
+        user: userInput,
+        score: quizTimer * score + score
+    })
+    localStorage.setItem('codeQuiz',JSON.stringify(userScore));
+    displayScore()
 });
 
-document.querySelector('#greeting').textContent = 'Last submitted by ' + (user) + '.';
+function displayScore(){
+    var userScore = JSON.parse(localStorage.getItem("codeQuiz"))||[]
+    var htmlCode = "<h1>Previous Score</h1>"
+    for (let i = 0; i < userScore.length; i++) {
+        htmlCode += `<h6>${userScore[i].user} / ${userScore[i].score}</h6>`
+    }
+    document.querySelector('#greeting').innerHTML = htmlCode;
+}
 

@@ -11,25 +11,26 @@
     <header class="bg-warning text-center">
         <h1>Code Quiz</h1>
     </header>
-    <section class="container">
+    <section class="container text-center border m-3 p-3">
         <h4>Coding Quiz!!</h4>
         <ul>
             Timer
             <li style="list-style: none;" id='countdown'>5:00</li>
         </ul>
-        <aside>
-            <h3 id="timer"></h3>
+        <aside class='container text-center'>
+            <h1 id="timer"></h1>
             <button id="start-btn" class="btn btn-primary btn-lg" onclick="">Start</button>
         </aside>
     </section>
-    <main id="question-container" class="container">
+    <main id="question-container" class="container text-center">
         <h4 id="question">Questions display</h4>
         <button class="btn btn-secondary userInput" id="option1" data-value="1"></button>
         <button class="btn btn-secondary userInput" id="option2" data-value="2"></button>
         <button class="btn btn-secondary userInput" id="option3" data-value="3"></button>
         <button class="btn btn-secondary userInput" id="option4" data-value="4"></button>
+        <h5 class="border-top" id="rightWrong"></h5>
     </main>
-    <aside id="userInput" class="container">
+    <aside id="userInput" class="container text-center">
         <h2 id="score"></h2>
         <label>
             Enter user name<br/>
