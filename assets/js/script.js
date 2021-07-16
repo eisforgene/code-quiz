@@ -90,7 +90,7 @@ function displayAnswer() {
         score++;
         rightWrong.innerText = "Correct";
     } else {
-       quizTimer = quizTimer-5
+       quizTimer = quizTimer-10
        rightWrong.innerText = "Wrong";
     }
      if (currentQ < questions.length - 1) {
@@ -114,7 +114,7 @@ document.querySelector('#initialsSave').addEventListener('click', function(e) {
     var userScore = JSON.parse(localStorage.getItem("codeQuiz"))||[]
     userScore.push({
         user: userInput,
-        score: quizTimer * score + score
+        score: quizTimer
     })
     localStorage.setItem('codeQuiz',JSON.stringify(userScore));
     displayScore()
@@ -129,3 +129,11 @@ function displayScore(){
     document.querySelector('#greeting').innerHTML = htmlCode;
 }
 
+function empty() {
+    var blank;
+    blank = document.getElementById('initialsSave').value;
+    if (blank == "") {
+        alert("Enter a valid name please!");
+        return false;
+    };
+}
